@@ -35,7 +35,7 @@ function removeContact(contactId) {
     const contacts = JSON.parse(data);
     const contactById = contacts.filter((contact) => contact.id == contactId);
     const appdateContacts = contacts.filter(
-      (contact) => contact != contactById
+      (contact) => contact.id != contactId
     );
 
     fs.writeFile(contactsPath, JSON.stringify(appdateContacts), (err) => {
